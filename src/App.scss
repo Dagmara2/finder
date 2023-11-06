@@ -1,0 +1,102 @@
+$color-grey: #e3e5e8;
+$color-darkgrey: #6c7881;
+$color-blue: #0271e1;
+$color-darkblue: #18304b;
+* {
+  box-sizing: border-box;
+}
+.categories {
+  &__wrapper {
+    width: 100%;
+    max-width: 1120px;
+    padding: 5rem 1rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2em;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+    color: $color-darkblue;
+  }
+  &__subtitle {
+    margin-top: 0;
+    font-size: 1.25rem;
+    line-height: 1.6em;
+    font-weight: 400;
+    color: $color-darkgrey;
+  }
+}
+
+.items {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  &__element {
+    width: 49%;
+    border: 1px solid $color-grey;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    min-height: 105px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    @media (min-width: 992px) {
+      width: 15%;
+    }
+    &:hover {
+      border-color: $color-blue;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0.5rem;
+  }
+  &__img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  &__title {
+    color: $color-blue;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5em;
+    margin: 0;
+  }
+}
+
+.btn-arr {
+  margin: auto;
+  color: $color-blue;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &::after {
+    content: "";
+    background: url(./img/chevron-down-solid.svg);
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease-in-out;
+  }
+  &--up {
+    &:after {
+      transform: rotate(180deg);
+    }
+  }
+}
